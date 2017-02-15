@@ -40,3 +40,7 @@ class Attendance(Base):
 	chef_flag = Column(Boolean)
 	
 
+engine = create_engine('sqlite:///project.db')
+Base.metadata.bind = engine
+DBSession = sessionmaker(bind=engine)
+dbsession = DBSession()

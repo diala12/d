@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__)
-app.secret_key = 'i love potatoes'
+app.secret_key = 'i love dilo'
 
 # SQLAlchemy stuff
 ### Add your tables here!
@@ -57,7 +57,7 @@ def create_account():
 		return render_template('create_account.html')
 	else:
 		# ADD CREATING ACCOUNT AND ALL THAT GOOD STUFF HERE!!!
-		user = Person(name = request.form['fullname'],
+		user = Person(name = request.form['name'],
 					  username = request.form['username'],
 					  password = request.form['password'],
 					  gender = request.form['gender'],
@@ -118,7 +118,7 @@ def create_event():
 def event_page(event_id):
 	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
 	event = dbsession.query(Event).filter_by(id = event_id).first()
-	attendance_list = dbsession.query(Attendance).filter_by(event_id = event_id).all()  # All attendance for this event
+	attendance_list = dbsession.query(Attendance).filter_by(event_id = event.id).all()  # All attendance for this event
 
 	already_attending = False
 
@@ -150,10 +150,10 @@ def edit_event():
 		new_desc = request.form['description']
 		new_location = request.form['location']
 
-		event.name = new_title
+		event.title = new_title
 		event.date = new_date
 		event.description = new_desc
-		event.locatin = new_locatin
+		event.location = new_location
 
 
 		dbsession.commit()
@@ -171,7 +171,7 @@ def attend_event(event_id):
 			already_attending = True
 			break
 
-	if request.args.get('Artist') == '1':
+	if request.args.get('chef') == '1':
 		chef_flag = True
 	else:
 		chef_flag = False

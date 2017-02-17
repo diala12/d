@@ -91,9 +91,10 @@
 					<td><h4><a href="{{ url_for('profile', user_id=attendance.person_id) }}">{{ attendance.person.name }}</a></h4></td>
 					<td><h4>{{ attendance.person.nationality }}</h4></td>
 					{% if attendance.chef_flag == True %}
-					<td><h4>Chef</h4></td>
+					<td><h4>artist</h4></td>
 
 					{% else %}
+
 					<td><h4>Attending</h4></td>
 					{% endif %}
 					{% endfor %}
@@ -104,16 +105,15 @@
 		</table>
 
 		<!-- End of table -->
-
-		{% if event.owner_id != user.id %} <!-- If the current user is not the owner of the event -->
+{% if event.owner_id != user.id %} <!-- If the current user is not the owner of the event -->
 
 		{% if already_attending == True %} <!-- If the user is already attending the event -->
 		<a href="{{ url_for('unattend_event', event_id = event.id) }}" role="button" class="btn btn-danger" style="margin-right: 0.625em;">Cancel attendance</a>
 
 		{% else %} <!-- Else the user is not attending -->
-		<a href="{{ url_for('attend_event', event_id = event.id) }}?chef=1" role="button" class="btn btn-warning" style="margin-right: 0.625em;">Cook in this event</a>
 		<a href="{{ url_for('attend_event', event_id = event.id) }}?chef=0" role="button" class="btn btn-danger" style="margin-right: 0.625em;">Attend this event</a>
 		{% endif %} <!-- End attending if -->
+
 
 		{% else %}
 

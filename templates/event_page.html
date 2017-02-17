@@ -112,7 +112,7 @@
 
 		{% else %} <!-- Else the user is not attending -->
 		<a href="{{ url_for('attend_event', event_id = event.id) }}?chef=1" role="button" class="btn btn-warning" style="margin-right: 0.625em;">Cook in this event</a>
-		<a href="{{ url_for('attend_event', event_id = event.id) }}?chef=0" role="button" class="btn btn-primary" style="margin-right: 0.625em;">Attend this event</a>
+		<a href="{{ url_for('attend_event', event_id = event.id) }}?chef=0" role="button" class="btn btn-danger" style="margin-right: 0.625em;">Attend this event</a>
 		{% endif %} <!-- End attending if -->
 
 		{% else %}

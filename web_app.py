@@ -215,7 +215,7 @@ def edit_profile():
 
 	else:  # User submitted his changes
                 new_username = request.form['username']
-		new_name = request.form['fullname']
+		new_name = request.form['name']
 		new_password = request.form['password']
 		new_gender = request.form['gender']
 		new_nationality = request.form['nationality']

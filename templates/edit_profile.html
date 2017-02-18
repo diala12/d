@@ -31,7 +31,8 @@
 	<link href="{{ url_for('static', filename='js/main.js') }}" rel="stylesheet">
 
 </head>
-<body>
+<body background="/static/img/bg3.jpg">
+
 	<div id="navbar" style="margin-bottom: 10%;">
 		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
 	        <div class="container">
@@ -167,10 +168,10 @@
 				</div>
 			</div>
 
-			<input type="submit" value="Submit" class="btn btn-info" role="button">
+			<input type="submit" value="Submit" class="btn btn-default" role="button">
 
 		</form>
-		<a href="{{ url_for('profile', user_id=user.id) }}" role="button" class="btn btn-default" style="margin-top: 0.5em; margin-bottom: 2em;">Cancel</a>
+		<a href="{{ url_for('profile', user_id=user.id) }}" role="button" class="btn btn-danger" style="margin-top: 0.5em; margin-bottom: 2em;">Cancel</a>
 	</div>
 
 </body>

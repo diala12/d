@@ -30,7 +30,7 @@
 	<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
 	<link href="{{ url_for('static', filename='js/main.js') }}" rel="stylesheet">
 </head>
-<body background="/static/img/bg.jpg">
+<body background="/static/img/bg6.png">
 	<div id="navbar" style="margin-bottom: 7%;">
 		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
 	        <div class="container">
@@ -67,10 +67,11 @@
 <!-- The web app passes a user object to this page and then we use it in the following way: user.<attribute> -->
 	<div class="container">
 		{% if user.pic != "" %} <!-- If user has a picture -->
-		<img src="{{user.pic}}" width="11%" height="11%" class="img-circle" alt="">
+		<img src="{{user.pic}}" width="30%" height="30%" class="img-circle" alt="">
 		{% endif %}
-		<br><br>
-
+		
+</br>
+</br>
 		<p><b>Name:</b> {{ user.name }}</h1>
 		<p><b>Gender:</b> {{ user.gender }}</h3>
 		<p><b>Nationality:</b> {{ user.nationality }}</h3>
@@ -81,9 +82,9 @@
 		<br>
 
 		{% if user.id == current_id %}
-		<a href="{{ url_for('edit_profile') }}" role="button" class="btn btn-success" style="margin-right: 0.625em;">Edit</a>
+		<a href="{{ url_for('edit_profile') }}" role="button" class="btn btn-default" style="margin-right: 0.625em;">Edit</a>
 		{% endif %}
-		<a href="{{ url_for('main') }}" role="button" class="btn btn-default">Back</a>
+		<a href="{{ url_for('main') }}" role="button" class="btn btn-danger">Back</a>
 
 	</div>
 </body>

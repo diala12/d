@@ -31,7 +31,7 @@
 	<link href="{{ url_for('static', filename='js/main.js') }}" rel="stylesheet">
 </head>
 
-<body style="margin-bottom: 3.125em;" background="/static/img/bg2.jpg">
+<body style="margin-bottom: 3.125em;" background="/static/img/bg5.jpg">
 	<div id="navbar" style="margin-bottom: 10%;">
 		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
 	        <div class="container">
@@ -70,12 +70,16 @@
 	<div class="container">
 		<h2>{{ event.title }}</h2>
 		<h4>{{ event.date.day }}.{{ event.date.month }}.{{ event.date.year }}</h4>
-
-		<br>
+</br>
+</br>
+</br>
+		
 		<p>{{ event.description }}</p>
 		<p><b>Location:</b> {{ event.location }}</p>
 		<!-- Table of people -->
-
+</br>
+</br>
+</br>
 
 		<table class="table">
 			<thead>
@@ -111,17 +115,17 @@
 		<a href="{{ url_for('unattend_event', event_id = event.id) }}" role="button" class="btn btn-danger" style="margin-right: 0.625em;">Cancel attendance</a>
 
 		{% else %} <!-- Else the user is not attending -->
-		<a href="{{ url_for('attend_event', event_id = event.id) }}?chef=0" role="button" class="btn btn-primary" style="margin-right: 0.625em;">Attend this event</a>
+		<a href="{{ url_for('attend_event', event_id = event.id) }}?chef=0" role="button" class="btn btn-default" style="margin-right: 0.625em;">Attend this event</a>
 		{% endif %} <!-- End attending if -->
 
 
 		{% else %}
 
-		<a href="{{ url_for('edit_event') }}" role="button" class="btn btn-success" style="margin-right: 0.625em;">Edit</a>
+		<a href="{{ url_for('edit_event') }}" role="button" class="btn btn-default" style="margin-right: 0.625em;">Edit</a>
 
 		{% endif %} <!-- End owner if -->
 
-		<a href="{{ url_for('main') }}" role="button" class="btn btn-default">Back</a>
+		<a href="{{ url_for('main') }}" role="button" class="btn btn-danger">Back</a>
 
 
 	</div>
